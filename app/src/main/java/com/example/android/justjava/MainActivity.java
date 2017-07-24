@@ -48,10 +48,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = calculatePrice(quantity, 5);
-        String priceMessage = "Total: $" + price;
-        priceMessage = priceMessage + "\nThank you!";
-        displayMessage(priceMessage);
+        displayMessage(createOrderSummary(calculatePrice(quantity, 5)));
     }
 
     /**
@@ -60,9 +57,22 @@ public class MainActivity extends AppCompatActivity {
      * @param numberOfCups = number of cups of coffee
      * @param pricePerCup = the price of a cup of coffee
      */
-    private int calculatePrice(int numberOfCups, int pricePerCup)
-    {
+    private int calculatePrice(int numberOfCups, int pricePerCup) {
         return numberOfCups*pricePerCup;
+    }
+
+    /**
+     * This method takes in a price and prints a report of the individual's
+     * name, number of cups of coffee, the total price, and a thank you message
+     *
+     * @param price = number of cups of coffee
+     */
+    private String createOrderSummary(int price) {
+        String orderSummary = "Name: Rodger Federer";
+        orderSummary = orderSummary + "\nQuantity: " + quantity;
+        orderSummary = orderSummary + "\nTotal: $" + price;
+        orderSummary = orderSummary + "\nThank you!";
+        return orderSummary;
     }
 
     /**
@@ -71,14 +81,6 @@ public class MainActivity extends AppCompatActivity {
     private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
-    }
-
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
     /**
