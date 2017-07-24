@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * This method is called when the order button is clicked.
+     * This method is called when the increment button is clicked.
      */
     public void increment(View view) {
         quantity++;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
         /**
-         * This method is called when the order button is clicked.
+         * This method is called when the decrement button is clicked.
          */
     public void decrement(View view) {
         if(quantity>0){quantity--; displayQuantity(quantity);}
@@ -48,9 +48,21 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        //String priceMessage = "Free";
-        int price = quantity * 5;
-        displayPrice(price);
+        int price = calculatePrice(quantity, 5);
+        String priceMessage = "Total: $" + price;
+        priceMessage = priceMessage + "\nThank you!";
+        displayMessage(priceMessage);
+    }
+
+    /**
+     * This method calculates the price of a coffee purchase
+     *
+     * @param numberOfCups = number of cups of coffee
+     * @param pricePerCup = the price of a cup of coffee
+     */
+    private int calculatePrice(int numberOfCups, int pricePerCup)
+    {
+        return numberOfCups*pricePerCup;
     }
 
     /**
