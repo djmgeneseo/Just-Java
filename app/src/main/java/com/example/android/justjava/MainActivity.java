@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
 
-        displayMessage(createOrderSummary(calculatePrice(quantity, 5)), hasWhippedCream);
+        displayMessage(createOrderSummary(calculatePrice(quantity, 5),hasWhippedCream));
     }
 
     /**
@@ -72,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
      * @param price = number of cups of coffee
      */
     private String createOrderSummary(int price, boolean hasWhippedCream) {
-
-
         String orderSummary = "Name: Rodger Federer";
         orderSummary = orderSummary + "\nAdd whipped cream? " + hasWhippedCream;
         orderSummary = orderSummary + "\nQuantity: " + quantity;
