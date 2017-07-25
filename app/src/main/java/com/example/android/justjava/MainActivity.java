@@ -11,8 +11,10 @@ package com.example.android.justjava;
 import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -55,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate);
         boolean hasChocolate = chocolateCheckBox.isChecked();
 
-        displayMessage(createOrderSummary(calculatePrice(quantity, 5),hasWhippedCream, hasChocolate));
+        EditText nameEditText = (EditText) findViewById(R.id.nameField);
+        String name = nameEditText.getText().toString();
+
+
+        displayMessage(createOrderSummary(calculatePrice(quantity, 5),hasWhippedCream, hasChocolate, name));
     }
 
     /**
@@ -74,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param price = number of cups of coffee
      */
-    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate) {
-        String orderSummary = "Name: Rodger Federer";
+    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate, String name) {
+        String orderSummary = "Name: " + name;
         orderSummary = orderSummary + "\nAdd whipped cream? " + hasWhippedCream;
         orderSummary = orderSummary + "\nAdd chocolate? " + hasChocolate;
         orderSummary = orderSummary + "\nQuantity: " + quantity;
