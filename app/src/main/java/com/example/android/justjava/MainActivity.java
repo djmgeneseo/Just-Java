@@ -71,7 +71,11 @@ public class MainActivity extends AppCompatActivity {
      * @param pricePerCup = the price of a cup of coffee
      */
     private int calculatePrice(int numberOfCups, int pricePerCup) {
-        return numberOfCups*pricePerCup;
+        int price = numberOfCups*pricePerCup;
+
+
+
+        return price;
     }
 
     /**
