@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         String name = nameEditText.getText().toString();
 
 
-        displayMessage(createOrderSummary(calculatePrice(quantity, 5),hasWhippedCream, hasChocolate, name));
+        displayMessage(createOrderSummary(calculatePrice(quantity, 5, hasWhippedCream, hasChocolate),
+                        hasWhippedCream, hasChocolate,  name));
     }
 
     /**
@@ -70,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
      * @param numberOfCups = number of cups of coffee
      * @param pricePerCup = the price of a cup of coffee
      */
-    private int calculatePrice(int numberOfCups, int pricePerCup) {
+    private int calculatePrice(int numberOfCups, int pricePerCup, boolean hasWhippedCream, boolean hasChocolate) {
         int price = numberOfCups*pricePerCup;
 
-
-
+        if (hasWhippedCream) {price++;}
+        if (hasChocolate) {price +=2;}
         return price;
     }
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param price = number of cups of coffee
      */
-    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate, String name) {
+    private String createOrderSummary(int price,  boolean hasWhippedCream, boolean hasChocolate, String name) {
         String orderSummary = "Name: " + name;
         orderSummary = orderSummary + "\nAdd whipped cream? " + hasWhippedCream;
         orderSummary = orderSummary + "\nAdd chocolate? " + hasChocolate;
