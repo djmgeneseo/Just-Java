@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="@drawable/coffee_background">
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -17,7 +20,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:hint="Name"
-            android:inputType="textCapWords" />
+            android:textStyle="italic"
+            android:inputType="textCapWords"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,25 +33,35 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:text="Toppings"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:fontFamily="cursive"
+            android:textStyle="bold"/>
 
         <CheckBox
             android:id="@+id/whipped_cream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Whipped cream"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_marginLeft="16dp"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-medium"
+            android:buttonTint="#ffffff"/>
 
         <CheckBox
             android:id="@+id/chocolate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chocolate"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_marginLeft="16dp"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-medium"
+            android:buttonTint="#ffffff"/>
 
         <TextView
             android:textAllCaps="true"
@@ -53,7 +70,11 @@
             android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantity" />
+            android:text="Cups of Coffee"
+            android:textColor="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:fontFamily="cursive"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -65,16 +86,18 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:text = "-"
-                android:layout_marginBottom="16dp"
-                android:onClick="decrement"/>
+                android:layout_marginBottom="8dp"
+                android:onClick="decrement"
+                />
 
             <TextView
                 android:id ="@+id/quantity_text_view"
                 android:layout_marginLeft="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="2" />
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
 
             <Button
                 android:layout_marginLeft="8dp"
@@ -86,30 +109,45 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/checkoutButton"
+            android:layout_marginLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:onClick="checkoutCart"
+            />
+
         <TextView
+            android:id="@+id/orderSummary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAllCaps="true"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="16dp"
-            android:text="Order Summary" />
+            android:layout_margin="16dp"
+            android:text="Order Summary"
+            android:visibility="invisible"
+            android:textColor="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
         <TextView
             android:id="@+id/order_summary_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="20dp"
-            android:text="$10.00" />
+            android:text=""
+            android:visibility="invisible"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-medium"/>
 
         <Button
+            android:id="@+id/orderButton"
             android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Order"
-            android:onClick="submitOrder" />
-
+            android:onClick="submitOrder"
+            android:visibility="invisible" />
 
     </LinearLayout>
 </ScrollView>
