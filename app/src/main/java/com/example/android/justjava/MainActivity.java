@@ -8,7 +8,9 @@
 
 package com.example.android.justjava;
 
+import android.content.Intent;
 import android.icu.text.NumberFormat;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -51,18 +53,25 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream);
-        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+//        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream);
+//        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+//
+//        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate);
+//        boolean hasChocolate = chocolateCheckBox.isChecked();
+//
+//        EditText nameEditText = (EditText) findViewById(R.id.nameField);
+//        String name = nameEditText.getText().toString();
 
-        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate);
-        boolean hasChocolate = chocolateCheckBox.isChecked();
+//        displayMessage(createOrderSummary(calculatePrice(quantity, 5, hasWhippedCream, hasChocolate),
+//                        hasWhippedCream, hasChocolate,  name));
 
-        EditText nameEditText = (EditText) findViewById(R.id.nameField);
-        String name = nameEditText.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:47.6, -122.3"));
 
-
-        displayMessage(createOrderSummary(calculatePrice(quantity, 5, hasWhippedCream, hasChocolate),
-                        hasWhippedCream, hasChocolate,  name));
+        //Checking to see if there's a component on device that can handle this intent. Does not perform intent if none exist, to prevent app from crashing.
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
