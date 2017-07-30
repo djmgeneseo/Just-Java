@@ -27,54 +27,34 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderText"
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="Toppings"
-            android:textAllCaps="true"
-            android:textColor="#ffffff"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="cursive"
-            android:textStyle="bold"/>
+            android:text="Toppings"/>
 
         <CheckBox
+            style="@style/Toppings"
             android:id="@+id/whipped_cream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Whipped cream"
             android:textSize="16sp"
             android:layout_marginLeft="16dp"
-            android:paddingLeft="10dp"
-            android:textColor="#ffffff"
-            android:fontFamily="sans-serif-medium"
-            android:buttonTint="#ffffff"/>
+            android:paddingLeft="10dp"/>
 
         <CheckBox
+            style="@style/Toppings"
             android:id="@+id/chocolate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Chocolate"
             android:textSize="16sp"
             android:layout_marginLeft="16dp"
-            android:paddingLeft="10dp"
-            android:textColor="#ffffff"
-            android:fontFamily="sans-serif-medium"
-            android:buttonTint="#ffffff"/>
+            android:paddingLeft="10dp"/>
 
         <TextView
-            android:textAllCaps="true"
+            style="@style/HeaderText"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cups of Coffee"
-            android:textColor="#ffffff"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="cursive"
-            android:textStyle="bold"/>
+            android:text="Cups of Coffee" />
 
         <LinearLayout
             android:layout_width="wrap_content"
