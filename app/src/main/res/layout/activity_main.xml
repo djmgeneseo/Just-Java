@@ -7,18 +7,20 @@
     android:layout_width="match_parent"
     android:background="@drawable/coffee_background">
 
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:background="@drawable/green_chalkboard"
         tools:context="com.example.android.justjava.MainActivity">
 
         <EditText
             android:id="@+id/nameField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+
             android:hint="Name"
             android:textStyle="italic"
             android:inputType="textCapWords"
